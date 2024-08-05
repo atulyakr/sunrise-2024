@@ -35,7 +35,7 @@ describe('Task Manager', () => {
   test('should fetch active tasks', () => {
     const activeTasks = getActiveTasks();
     expect(activeTasks).toEqual(
-      [{"completed": false, "description": "Learn basic Git commands.", "group": 2, "id": 3, "persona": "Intern", "title": "Basic Git"}, {"completed": false, "description": "Collaborate on a Git repository.", "group": 2, "id": 4, "persona": "Intern", "title": "Git Collaboration"}])
+      [{"completed": false, "description": "Learn basic Git commands.", "group": 2, "id": 3, "inProgress": true, "persona": "Intern", "title": "Basic Git"}, {"completed": false, "description": "Collaborate on a Git repository.", "group": 2, "id": 4, "inProgress": true, "persona": "Intern", "title": "Git Collaboration"}])
       
     ;
   });
