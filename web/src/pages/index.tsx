@@ -125,7 +125,7 @@ export default function Home() {
    return (
     <Container maxWidth="lg">
     <Typography variant="h4" color="white" align="center" gutterBottom mt={4}>
-      Yo!! Hope you're doing well.
+      Yo!! Hope you&#39;re doing well.
     </Typography>
 
     <Box display="flex" justifyContent="center" mb={4}>
