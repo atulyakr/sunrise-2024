@@ -18,7 +18,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
   switch (req.method) {
     case "GET":
-      const { type } = req.query;
+      let { type } = req.query;
       if (type === "active") {
         res.status(200).json(getActiveTasks());
       } else if (type === "completed") {
@@ -29,7 +29,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       break;
 
     case "POST":
-      const { title, description, persona, group } = req.body;
+      let { title, description, persona, group } = req.body;
       if (title && description && persona && group !== undefined) {
         createTask(title, description, persona, Number(group));
         res.status(201).json({ message: "Task created successfully" });
@@ -39,7 +39,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       break;
 
     case "PUT":
-      const { id, ...updatedTask } = req.body;
+      let { id, ...updatedTask } = req.body;
       if (id !== undefined) {
         updateTask(Number(id), updatedTask);
         res.status(200).json({ message: "Task updated successfully" });
@@ -49,7 +49,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
       break;
 
     case "DELETE":
-      const { id: taskId } = req.query;
+      let { id: taskId } = req.query;
       if (taskId !== undefined) {
         deleteTask(Number(taskId));
         res.status(200).json({ message: "Task deleted successfully" });
