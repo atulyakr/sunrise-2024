@@ -39,14 +39,6 @@ export function completeTask(taskTitle: string): void {
 
             if((tasks.filter(task=>task.group==activeGroup && task.completed==true)).length==1){
                 tasks[taskIndex+2].inProgress=true;
-                 
-                /* //getting the next group to assign work
-                let nextGroup=tasks.filter(task=>task.group==tasks[taskIndex].group+1);
-                for(let i=0;i<tasks.length;i++){
-                    nextGroup[i].inProgress=true;
-                }
-                tasks=[...nextGroup]; */
-
             }
 
 
